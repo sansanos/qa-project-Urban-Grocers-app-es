@@ -2,12 +2,6 @@ import sender_stand_request
 import data
 
 
-def get_kit_body(name):
-    current_kit_body = data.kit_body.copy()
-    current_kit_body['name'] = name
-    return current_kit_body
-
-
 # Función de prueba positiva
 def positive_assert(kit_body):
     kit_response = sender_stand_request.post_new_client_kit(kit_body)
