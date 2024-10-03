@@ -1,5 +1,5 @@
 
-# Proyecto para el séptimo sprint (Urban Grocers app)
+# Proyecto para el séptimo sprint (Urban Grocers app) Por Santiago Sánchez 14avo grupo
 
 Otro QA Engineer que trabaja contigo está comprobando cómo la aplicación Urban Grocers crea kits de productos. 
 Se han creado varias listas de comprobación, una de ellas es para el campo name en la solicitud de creación de un kit
@@ -11,7 +11,41 @@ el repositorio a revisión
 
 ## Pasos para ejecutar las pruebas
 Configuración
-Trabajarás con Git y GitHub en este proyecto. Sigue los pasos a continuación para configurar tu proyecto.
+
+# **Instalando Librerias Pytest y Requests**
+
+Existen dos métodos para instalar Pytest y Requests. Elige el que te resulte más conveniente.
+
+1️⃣ Usando el comando "pip" en la terminal:
+
+Abre la terminal o consola.
+Ingresa el comando pip install pytest.
+Ingresa el comando pip install requests.
+pip es el gestor de paquetes de Python. Te permite instalar y gestionar bibliotecas, así como herramientas adicionales.
+
+📎 Si el comando pip no funciona, intenta usar pip3 en su lugar.
+
+2️⃣ A través de la interfaz de PyCharm en "Python Packages":
+
+En tu proyecto de PyCharm, dirígete al panel inferior y selecciona la pestaña "Python Packages".
+En el campo de búsqueda, introduce "Pytest".
+Localiza y selecciona el paquete "Pytest" de la lista y haz clic en el botón "Install".
+Haz lo mismo con "Requests"
+
+# **Ejecución de pruebas**
+
+Tienes dos opciones para ejecutar tus pruebas: directamente desde la consola de PyCharm o utilizando su interfaz gráfica.
+
+1️⃣ Desde la terminal de PyCharm
+
+Dirígete a la pestaña "Terminal" en la parte inferior de PyCharm. Por defecto, esta terminal se ubica en el directorio de tu proyecto. 
+
+Para ejecutar todas las pruebas de tu proyecto, simplemente escribe: pytest (dentro de tu directorio) 
+(Ej:Downloads/QA_BOOTCAMP/SPRINT_7/projects/qa-project-Urban-Grocers-app-es)
+
+Luego ejecuta las pruebas desde el archivo create_kit_name_kit_test.py: pytest create_kit_name_kit_test.py
+
+Trabajarás con Git y GitHub en este proyecto. Sigue los pasos a continuación para configurar tu proyecto:
 
 Paso 1: conecta tu GitHub
 El primer paso es enlazar tu cuenta de GitHub a TripleTen. Para ello, haz clic en el botón "Enlazar la cuenta de 
