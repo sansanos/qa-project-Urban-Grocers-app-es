@@ -1,3 +1,109 @@
+# Project for the Seventh Sprint (Urban Grocers App) By Santiago Sánchez, Group 14
+Another QA Engineer working with you is checking how the Urban Grocers app creates product kits. Several checklists have been created, one of which is for the name field in the product kit creation request.
+
+Your task is to automate the tests from this checklist, upload the code to GitHub, and submit the repository for review.
+
+## Steps to Execute the Tests
+Setup
+
+Installing Pytest and Requests Libraries
+There are two methods to install Pytest and Requests. Choose the one that’s most convenient for you.
+
+1️⃣ Using the "pip" command in the terminal:
+
+Open the terminal or console.
+Enter the command pip install pytest.
+Enter the command pip install requests.
+pip is Python’s package manager. It allows you to install and manage libraries and additional tools.
+
+📎 If the pip command doesn’t work, try using pip3 instead.
+
+2️⃣ Through the PyCharm interface in "Python Packages":
+
+In your PyCharm project, go to the bottom panel and select the "Python Packages" tab.
+In the search field, enter "Pytest."
+Locate and select the "Pytest" package from the list and click the "Install" button.
+Do the same for "Requests."
+
+# **Running Tests**
+You have two options for running your tests: directly from PyCharm's console or using its graphical interface.
+
+1️⃣ From the PyCharm terminal
+
+Go to the "Terminal" tab at the bottom of PyCharm. By default, this terminal is in your project directory.
+
+To run all tests in your project, simply type: pytest (within your directory)
+(e.g., Downloads/QA_BOOTCAMP/SPRINT_7/projects/qa-project-Urban-Grocers-app-en)
+
+Then run the tests from the file create_kit_name_kit_test.py: pytest create_kit_name_kit_test.py
+
+You’ll work with Git and GitHub for this project. Follow the steps below to set up your project:
+
+Step 1: Connect your GitHub
+The first step is to link your GitHub account to TripleTen. To do this, click the "Link GitHub account" button in the widget at the top of this page. This will take you to a new browser tab where you’ll be asked to confirm that you want to link your GitHub account. If you haven’t logged into GitHub yet, you’ll be prompted to enter your username and password. Upon confirming, your TripleTen profile will be connected to your GitHub profile via GitHub’s secure API. This will allow you to submit your projects automatically with just a click, directly within the TripleTen platform.
+
+Step 2: Clone the repository to your computer
+Once you’ve linked your TripleTen account with GitHub, a repository will be created automatically. The repository name will be qa-project-Urban-Grocers-app-en.
+
+Go to GitHub and clone the new repository to your local computer by following these steps:
+
+Open the command line on your computer.
+If you haven’t done so, create a directory to store all your projects.
+Clone the repository with SSH.
+Step 3: Work on the project locally
+Now you have a local copy of the project and can open the project folder on your computer.
+
+Press the "Start Server" button to get your server URL.
+
+Open the documentation to review the Urban Grocers app’s API: <the URL of the launched server>/docs/.
+
+Look for "Main.Kits" → "Create a kit."
+
+Creating a kit for the user
+You’ll create a kit within a particular user, not a card. To do so, follow these steps:
+
+Send a request to create a new user and remember the authentication token (authToken).
+Send a request to create a personal kit for this user. Be sure to also pass the Authorization header.
+After that, simply use the checklist. Test results will vary each time, depending on the request body. However, the steps will remain the same.
+
+Test Checklist
+
+1.  Allowed number of characters (1):
+kit_body = { "name": "a" }
+Response code: 201. The "name" field in the response body matches the "name" field in the request body.
+
+2.  Allowed number of characters (511):
+kit_body = { "name": "The test value for this check will be under the limit" }
+Response code: 201. The "name" field in the response body matches the "name" field in the request body.
+
+3.  Number of characters is less than the allowed amount (0):
+kit_body = { "name": "" }
+Response code: 400.
+
+4.  Number of characters exceeds the allowed amount (512):
+kit_body = { "name": "The test value for this check exceeds the limit" }
+Response code: 400.
+
+5.  Special characters are allowed:
+kit_body = { "name": "№%@," }
+Response code: 201. The "name" field in the response body matches the "name" field in the request body.
+
+6.  Spaces are allowed:
+kit_body = { "name": " A Aaa " }
+Response code: 201. The "name" field in the response body matches the "name" field in the request body.
+
+7.  Numbers are allowed:
+kit_body = { "name": "123" }
+Response code: 201. The "name" field in the response body matches the "name" field in the request body.
+
+8.  The parameter is not included in the request:
+kit_body = { }
+Response code: 400.
+
+9.  A different parameter type is passed (number):
+kit_body = { "name": 123 }
+Response code: 400.
+
 
 # Proyecto para el séptimo sprint (Urban Grocers app) Por Santiago Sánchez 14avo grupo
 
@@ -120,3 +226,4 @@ solicitud
 8.	El parámetro no se pasa en la solicitud: kit_body = { }	Código de respuesta: 400
 
 9.	Se ha pasado un tipo de parámetro diferente (número): kit_body = { "name": 123 }	Código de respuesta: 400
+
